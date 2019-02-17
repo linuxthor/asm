@@ -45,7 +45,7 @@ main:
     push rbp
     mov  rdi, rax
     mov  rsi, md
-    xor  rax, rax
+    xor  eax, eax
     call fdopen
     pop rbp
 
@@ -53,7 +53,7 @@ main:
     mov rdx, rax
     mov rdi, [curly]
     mov rsi, CURLOPT_WRITEDATA
-    xor rax, rax
+    xor eax, eax
     call curl_easy_setopt
     pop rbp
   
@@ -61,7 +61,7 @@ main:
     mov rdi, [curly]
     mov rsi, CURLOPT_URL               
     mov rdx, url
-    xor rax, rax
+    xor eax, eax
     call curl_easy_setopt
     pop rbp    
 
