@@ -107,7 +107,6 @@ main:
     call curl_global_cleanup
     pop rbp
 
-    mov rbp, rsp
     mov rax, 59                               ;  sys_execve
     mov rdi, pfd
     mov rsi, 0
