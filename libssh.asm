@@ -71,7 +71,7 @@ main:
     ret 
 
 section .data
-    con db '192.168.0.32',0  
+    con db '192.168.0.1',0  
     usr db 'username',0
     pwd db '!passwd!',0
 
