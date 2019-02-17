@@ -1,3 +1,4 @@
+; linuxthor
 ;
 ; simple libcurl example 
 ;
@@ -18,7 +19,7 @@ global main
 
 main: 
     push rbp
-    mov rdi, CURL_GLOBAL_DEFAULT       ; CURL_GLOBAL_DEFAULT
+    mov rdi, CURL_GLOBAL_DEFAULT       
     xor eax, eax              
     call curl_global_init
     pop rbp
@@ -31,7 +32,7 @@ main:
 
     push rbp
     mov rdi, [curly]
-    mov rsi, CURLOPT_URL                ; CURLOPT_URL
+    mov rsi, CURLOPT_URL               
     mov rdx, url
     xor rax, rax
     call curl_easy_setopt
