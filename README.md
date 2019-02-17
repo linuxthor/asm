@@ -1,5 +1,5 @@
 # asm
 assembly language examples, mostly Linux  
 
-curl.asm - fetch www.example.com with libcurl  
+curl.asm - simple example of using libcurl   
 
