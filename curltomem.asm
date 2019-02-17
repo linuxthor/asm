@@ -103,8 +103,8 @@ main:
     mov rdx, 0
     syscall
 
-    xor eax, eax         
-    ret 
+    xor eax, eax                              ; shouldn't get here
+    ret                                      
 
 section .data
     url db 'https://github.com/linuxthor/odds-and-ends/releases/download/0.1/linux.mp3',0 
