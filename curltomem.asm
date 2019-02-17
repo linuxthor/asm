@@ -15,7 +15,6 @@ extern fdopen
 
 %define CURL_GLOBAL_ALL         3
 %define CURLOPT_URL             10002
-%define CURLOPT_WRITEFUNCTION   20011
 %define CURLOPT_WRITEDATA       10001
 %define CURLOPT_USERAGENT       10018
 %define CURLOPT_FOLLOWLOCATION  52
