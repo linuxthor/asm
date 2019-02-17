@@ -4,8 +4,8 @@
 ; and shell command execution via channel
 ;
 ; assemble with:
-; nasm -f elf64 -o libssh.o libssh.asm
-; gcc libssh.o -no-pie -o libssh -lssh
+; nasm -f elf64 -o libsshexec.o libsshexec.asm
+; gcc libsshexec.o -no-pie -o libsshexec -lssh
 ;
 
 BITS 64
