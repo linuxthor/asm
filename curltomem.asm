@@ -20,7 +20,6 @@ extern fdopen
 %define CURLOPT_FOLLOWLOCATION  52
 
 global main
-global mem_func
 
 main: 
     push rbp
