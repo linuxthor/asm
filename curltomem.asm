@@ -18,7 +18,7 @@ extern fdopen, setvbuf
 %define CURLOPT_WRITEDATA       10001
 %define CURLOPT_USERAGENT       10018
 %define CURLOPT_FOLLOWLOCATION  52
-%define _IONBF          2
+%define _IONBF                  2
 
 global main
 
