@@ -24,10 +24,10 @@ global main
 
 main: 
     push rbp
-    mov rdi, CURL_GLOBAL_ALL 
-    xor eax, eax              
+    mov  rdi, CURL_GLOBAL_ALL 
+    xor  eax, eax              
     call curl_global_init
-    pop rbp
+    pop  rbp
 
     push rbp
     call curl_easy_init
@@ -50,7 +50,7 @@ main:
     mov  rsi, md
     xor  rax, rax
     call fdopen                                 
-    pop rbp
+    pop  rbp
 
     mov [filea], rax
 
@@ -60,7 +60,7 @@ main:
     mov  rdx, _IONBF                            ; disable buffering
     mov  rcx, 0                                 ; else we get only first 4096 
     call setvbuf                                ; bytes 
-    pop rbp
+    pop  rbp
 
     push rbp
     mov rdx, [filea]
