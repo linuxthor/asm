@@ -19,54 +19,48 @@ global main
 
 main: 
     push rbp
+    mov  rbp, rsp
     mov rdi, CURL_GLOBAL_DEFAULT       
     xor eax, eax              
     call curl_global_init
-    pop rbp
 
-    push rbp
     call curl_easy_init
-    pop rbp
 
     cmp  rax, 0
     je   error
 
     mov  [curly], rax
 
-    push rbp
     mov rdi, [curly]
     mov rsi, CURLOPT_URL               
     mov rdx, url
     xor rax, rax
     call curl_easy_setopt
-    pop rbp    
 
     cmp  rax, 0
     jne  error
 
-    push rbp
     mov  rdi, [curly]
     xor  eax, eax 
     call curl_easy_perform
-    pop  rbp 
 
     cmp rax, 0
     jne error
 
-    push rbp 
     mov rdi, [curly]
     xor eax, eax
     call curl_easy_cleanup
-    pop rbp
 
-    push rbp
     call curl_global_cleanup
-    pop rbp
 
+    mov rsp, rbp
+    pop rbp
     xor eax, eax         
     ret 
 
 error:
+    mov rsp, rbp
+    pop rbp
     mov rax, 1
     ret
 

