@@ -28,6 +28,9 @@ main:
     call curl_easy_init
     pop rbp
 
+    cmp  rax, 0
+    je   error
+
     mov  [curly], rax
 
     push rbp
@@ -38,11 +41,17 @@ main:
     call curl_easy_setopt
     pop rbp    
 
+    cmp  rax, 0
+    jne  error
+
     push rbp
-    mov rdi, [curly]
-    xor eax, eax 
+    mov  rdi, [curly]
+    xor  eax, eax 
     call curl_easy_perform
-    pop rbp 
+    pop  rbp 
+
+    cmp rax, 0
+    jne error
 
     push rbp 
     mov rdi, [curly]
@@ -57,8 +66,13 @@ main:
     xor eax, eax         
     ret 
 
+error:
+    mov rax, 1
+    ret
+
 section .data
     url db 'http://www.example.com/',0  
 
 section .bss
     curly resq 1
+
