@@ -5,4 +5,4 @@ curl.asm - simple example of using libcurl
 curltomem.asm - libcurl to download file to memfd and exec it  
 libssh.asm - simple example of using libssh  
 libsshexec.asm - libssh passwd auth and execute command  
-
+pam.asm - simple example of using libpam
