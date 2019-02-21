@@ -13,8 +13,7 @@
 BITS 64
 
 extern ssh_options_set, ssh_new, ssh_connect, ssh_disconnect
-extern ssh_free, ssh_userauth_kbdint, ssh_userauth_kbdint_getprompt
-extern ssh_userauth_kbdint_setanswer
+extern ssh_free, ssh_userauth_kbdint, ssh_userauth_kbdint_setanswer
 
 %define SSH_OPTIONS_HOST 0
 %define SSH_OPTIONS_USER 4
@@ -74,14 +73,8 @@ main:
 
 kbi:
     mov  rdi, [ssh_sesh]
-    mov  rsi, 0                           ; FIXME we cheat and assume 1st
-    mov  rdx, kbd_echo                    ; prompt is the one. 
-    xor  rax, rax
-    call ssh_userauth_kbdint_getprompt
-
-    mov  rdi, [ssh_sesh]
-    mov  rsi, 0                            
-    mov  rdx, pwd                         
+    mov  rsi, 0                           ; FIXME we cheat and assume 1st 
+    mov  rdx, pwd                          
     xor  rax, rax
     call ssh_userauth_kbdint_setanswer   
 
