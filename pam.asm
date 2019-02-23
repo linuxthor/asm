@@ -56,12 +56,10 @@ main:
     mov rsi, rax
     call pam_end
 
-    mov rsp, rbp
     pop rbp
     ret 
 
 error:
-    mov rsp, rbp
     pop rbp
     mov rax, 1
     ret
