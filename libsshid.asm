@@ -85,13 +85,11 @@ main:
     call ssh_free
 
     xor rax, rax
-    mov rsp, rbp
     pop rbp
     ret 
 
 error:
     mov rax, 1
-    mov rsp, rbp
     pop rbp
     ret
 
