@@ -53,13 +53,11 @@ main:
 
     call curl_global_cleanup
 
-    mov rsp, rbp
     pop rbp
     xor eax, eax         
     ret 
 
 error:
-    mov rsp, rbp
     pop rbp
     mov rax, 1
     ret
