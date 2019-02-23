@@ -8,4 +8,5 @@ libsshexec.asm - libssh passwd auth and execute command
 libsshcpexec.asm - libssh passwd auth sftp copy file and exec it  
 libsshid.asm - libssh verify server identity via known hosts  
 libsshkeyi.asm - libssh keyboard interactive auth  
-pam.asm - simple example of using libpam  
+pam.asm - simple example of using libpam   
+wsl.asm - detect microsoft windows subsystem for linux  
