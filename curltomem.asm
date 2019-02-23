@@ -112,13 +112,11 @@ main:
     mov rdx, 0
     syscall 
 
-    mov rsp, rbp
     pop rbp
     xor eax, eax                              ; shouldn't get here 
     ret 
 
 error:
-    mov rsp, rbp
     pop rbp
     mov rax, 1
     ret
