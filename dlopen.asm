@@ -40,7 +40,7 @@ main:
     ret
 
 section .data
-    lib db '/lib/x86_64-linux-gnu/libc.so.6',0
+    lib db 'libc.so.6',0
     lob db 'printf',0
     lub db 'ahoy %s mateys!',0x0d,0x0a,0
     leb db 'me'
