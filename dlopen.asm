@@ -44,6 +44,3 @@ section .data
     lob db 'printf',0
     lub db 'ahoy %s mateys!',0x0d,0x0a,0
     leb db 'me'
-
-section .bss
-    retz  resq 1
