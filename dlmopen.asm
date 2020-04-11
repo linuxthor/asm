@@ -27,8 +27,8 @@ extern dlmopen, dlsym, dlclose, printf
 %define LM_ID_NEWLM -1
 
 global main
-main:
 
+main:
     push rbp
     mov  rbp, rsp
 
