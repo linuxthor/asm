@@ -1,11 +1,11 @@
 ; linuxthor
 ;
-; simple dlmopen example
+; simple dlmopen example 
 ;
 ; dlmopen is like dlopen with the added ability
-; to specify a 'linkmap' (aka a 'namespace')
-; - either loading into the main/default namespace
-; or into a new (& separate) namespace
+; to specify a 'linkmap' (aka a 'linker namespace')
+; - either loading/resolving into the main/default 
+; namespace or into a new (& separate) namespace
 ;
 ; assemble with:
 ; nasm -f elf64 -o dlmopen.o dlmopen.asm
@@ -13,7 +13,7 @@
 
 BITS 64
 
-extern dlmopen, dlsym, printf
+extern dlmopen, dlsym, dlclose, printf
 
 %define RTLD_LAZY 0x001
 %define RTLD_NOW  0x002
@@ -34,14 +34,16 @@ main:
 
     mov  rdi, lub
     mov  rsi, leb
-    call printf
+    call printf    
 
     mov  rdi, LM_ID_NEWLM
     mov  rsi, lib
     mov  rdx, RTLD_LAZY
     call dlmopen
 
-    mov  rdi, rax
+    mov [output], rax
+
+    mov  rdi, [output]
     mov  rsi, lob
     call dlsym
 
@@ -49,11 +51,22 @@ main:
     mov rsi, leb
     call rax         ; musl uses writev for stdio / so
                      ; check it's working via strace
-    pop  rbp
-    ret
+
+    mov rdi, [output]
+    call dlclose 
+
+    mov rdi, lub
+    mov rsi, leb
+    call printf
+
+    pop  rbp 
+    ret    
 
 section .data
     lib db '/usr/local/musl/lib/libc.so',0
     lob db 'printf',0
     lub db 'ahoy %s mateys!',0x0d,0x0a,0
     leb db 'me'
+
+section .bss
+    output resb 128
