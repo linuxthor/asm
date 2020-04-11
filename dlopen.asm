@@ -19,8 +19,8 @@ extern dlopen, dlsym
 %define RTLD_NODELETE 0x010000
 
 global main
-main:
 
+main:
     push rbp
     mov  rbp, rsp
 
