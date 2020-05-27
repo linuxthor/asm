@@ -9,22 +9,22 @@
 BITS 64
 
 %define IPC_RMID      0                
-%define IPC_SET       1               
-%define IPC_STAT      2                
-%define IPC_INFO      3                
+%define IPC_SET       1            
+%define IPC_STAT      2               
+%define IPC_INFO      3               
 
 ; sys_semget
 %define IPC_PRIVATE   0
-%define	IPC_CREAT     01000	
-%define	IPC_EXCL      02000	
-%define	IPC_NOWAIT    04000	
+%define	IPC_CREAT     01000o
+%define	IPC_EXCL      02000o
+%define	IPC_NOWAIT    04000o
 
 global _start
 _start:
     mov rax, 64           ;  sys_semget
     mov rdi, 1076         
     mov rsi, 4
-    mov rdx, IPC_CREAT
+    mov rdx, IPC_CREAT|0666o
     syscall
 
     mov rdi, rax

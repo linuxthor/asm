@@ -16,16 +16,16 @@ endstruc
 
 ; sys_semget
 %define IPC_PRIVATE   0
-%define	IPC_CREAT     01000	
-%define	IPC_EXCL      02000	
-%define	IPC_NOWAIT    04000	
+%define	IPC_CREAT     01000o	
+%define	IPC_EXCL      02000o
+%define	IPC_NOWAIT    04000o
 
 global _start
 _start:
     mov rax, 64           ;  sys_semget
     mov rdi, 1066         
     mov rsi, 3
-    mov rdx, IPC_CREAT
+    mov rdx, IPC_CREAT|666o
     syscall
 
     mov rdi, rax
