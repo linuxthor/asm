@@ -8,23 +8,23 @@
 
 BITS 64
 
-%define SHM_RDONLY   010000               
-%define SHM_RND      020000             
-%define SHM_REMAP    040000               
-%define SHM_EXEC     0100000                
+%define SHM_RDONLY   010000o               
+%define SHM_RND      020000o             
+%define SHM_REMAP    040000o               
+%define SHM_EXEC     0100000o                
 
 ; sys_shmget
-%define IPC_PRIVATE  00000000
-%define IPC_CREAT    00001000   
-%define IPC_EXCL     00002000   
-%define IPC_NOWAIT   00004000 
+%define IPC_PRIVATE  00000000o
+%define IPC_CREAT    00001000o   
+%define IPC_EXCL     00002000o   
+%define IPC_NOWAIT   00004000o 
 
 global _start
 _start:
     mov rax, 29           ;  sys_shmget 
     mov rdi, IPC_PRIVATE
     mov rsi, 8192
-    mov rdx, IPC_CREAT
+    mov rdx, IPC_CREAT|0666o
     syscall
 
     mov rdi, rax
