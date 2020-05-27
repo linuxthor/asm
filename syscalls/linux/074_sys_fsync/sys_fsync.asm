@@ -18,6 +18,7 @@ _start:
     mov rax, 2            ;  sys_open
     mov rdi, filename
     mov rsi, O_MODES
+    mov rdx, 0666o
     syscall 
 
     mov [fd], rax
