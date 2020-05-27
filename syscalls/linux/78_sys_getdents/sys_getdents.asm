@@ -46,7 +46,7 @@ _start:
     syscall
 
 section .data
-    dir db '/usr/bin',0
+    dir db '/bin',0
 
 section .bss
     dirents resb 4096   
