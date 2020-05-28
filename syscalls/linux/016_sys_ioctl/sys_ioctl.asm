@@ -2,6 +2,9 @@
 ;
 ; sys_ioctl example
 ;
+; NOTE: no single standard - Arguments,  returns,  and semantics of ioctl() 
+;       vary according to the device driver in question
+;
 ; assemble with:
 ; nasm -f elf64 -o sys_ioctl.o sys_ioctl.asm
 ; ld sys_ioctl.o -o sys_ioctl 
