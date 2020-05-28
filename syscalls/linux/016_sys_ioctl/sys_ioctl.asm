@@ -65,13 +65,14 @@ _start:
     mov rdi, rax
 
     mov rax, 16           ;  sys_ioctl
-    mov rsi, TIOCMGET
+    mov rsi, TCGETS
     mov rdx, ioreturn
     syscall
 
     mov rdi, [ioreturn]
 
     mov rax, 60           ;  sys_exit
+    mov rdi, 0
     syscall
 
 section .data
