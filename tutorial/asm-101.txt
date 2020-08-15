@@ -453,7 +453,8 @@ can be as flexible, powerful and beautiful as any other programming language!
  =================================================================================
 | Resources:                                                                      |
 | ==========                                                                      |
-| If you would like to see some example code I maintain a repo at https://github. |
+| If you would like to see some code I maintain a repo at                         |
+| https://github.com/linuxthor/asm/                                               |
 | updated from time to time with various examples.                                |
 |                                                                                 |
 | Contact me on twitter (@linuxthor) for any questions.                           | 
