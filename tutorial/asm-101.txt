@@ -30,15 +30,15 @@ things come to mind:
                                  respect yourself for having been there and 
                                  done that! 
 
-3) "Altered states of conciousness" - Samadhi, bliss, the union with the whole 
-                                      and oneness with the universe is 
-                                      something that practitioners of  
-                                      meditation and yoga may strive for years 
-                                      to achieve. The simple repetitive nature 
-                                      of assembly language allows you to soon 
-                                      'lose yourself' and achieve a state where
-                                      everything shuts down and the only thing 
-                                      that exists in this world is nothing.  
+3) "Altered states of 
+                conciousness" - Samadhi, bliss, the union with the whole 
+                                and oneness with the universe - something that 
+				practitioners of  meditation and yoga may strive 
+				for years to achieve. The simple repetitive 
+				nature of assembly language allows you to soon 
+                                'lose yourself' and achieve a state where
+                                 everything shuts down and the only thing that 
+				 exists in this world is nothing.  
 
 I've provided some examples which you can copy / paste or (perhaps) scribe it 
 out for yourself.. But why the extra effort of that?? Very simple - The monks 
@@ -105,14 +105,14 @@ section .data
 I'll skip the obvious stuff about how it works for now as we can come back to 
 that in a moment. I'd like to mention something first:
 
-- The file has two distinct sections. They're labelled as .data and .text but 
-  to put it a simple way we've got a section for 'code' and a section for 
-  'data' - this is a good and _orderly_ thing and reflects how the world should 
-  work! Code is code and data is data! Data is a ragtag bunch of 'stuff' and 
-  code is the literal reflection of how you want the world to work.. (Any 
-  language that encourages you to mix the two should be treated with suspicion.. 
-  Yes. Seriously.. Code mistaken for data and data mistaken for code is the 
-  root of very many evils in this world..) 
+The file has two distinct sections. They're labelled as .data and .text but to 
+put it a simple way we've got a section for 'code' and a section for 'data' - 
+this is a good and _orderly_ thing and reflects how the world should work! Code 
+is code and data is data! Data is a ragtag bunch of 'stuff' and code is the 
+literal reflection of how you want the world to work.. (Any language that 
+encourages you to mix the two should be treated with suspicion.. Yes. Seriously.. 
+Code mistaken for data and data mistaken for code is the root of very many evils 
+in this world..) 
 
 I built the file using the instructions in the comment and for me it's 944 
 bytes and it's identified (by the `file` command) as:
