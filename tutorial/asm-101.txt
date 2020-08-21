@@ -448,13 +448,13 @@ I will cover:
 I hope you enjoyed this first guide and you can see why I think assembly language 
 can be as flexible, powerful and beautiful as any other programming language! 
 
- =================================================================================
-| Resources:                                                                      |
-| ==========                                                                      |
-| If you would like to see some code I maintain a repo at                         |
-| https://github.com/linuxthor/asm/                                               |
-| updated from time to time with various examples.                                |
-|                                                                                 |
-| Contact me on twitter (@linuxthor) for any questions.                           | 
-|                                                                                 |
- =================================================================================
+ =============================================================
+| Resources:                                                  |
+| ==========                                                  |
+| If you would like to see some code I maintain a repo at     |
+| https://github.com/linuxthor/asm/                           |
+| updated from time to time with various examples.            |
+|                                                             |
+| Contact me on twitter (@linuxthor) for any questions.       | 
+|                                                             |
+ =============================================================
