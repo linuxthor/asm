@@ -17,28 +17,26 @@ Why (not) assemby language?
 Why would anyone (YOU) want to write assembly language in 2020? For me three 
 things come to mind: 
 
-1) "It's (close to) the truth" - It's the pure unadulterated experience of 
-                                 telling a computer what to do! You can feel 
-                                 free to make it as beautiful or as terrible 
-                                 as you like! No language or framework need 
-                                 stand in your way!
+1) "It's (close to) the truth" - 
 
-2) "It will improve your life" - Yes! Seriously! The practice of doing things 
-                                 in assembly language is absolutely a gym 
-                                 workout for your brain. You can look at 
-                                 yourself in the mirror afterwards and really 
-                                 respect yourself for having been there and 
-                                 done that! 
+It's the pure unadulterated experience of telling a computer what to do! 
+You can feel free to make it as beautiful or as terrible as you like! No 
+language or framework need stand in your way!
 
-3) "Altered states of 
-                conciousness" - Samadhi, bliss, the union with the whole 
-                                and oneness with the universe - something that 
-				practitioners of  meditation and yoga may strive 
-				for years to achieve. The simple repetitive 
-				nature of assembly language allows you to soon 
-                                'lose yourself' and achieve a state where
-                                 everything shuts down and the only thing that 
-				 exists in this world is nothing.  
+2) "It will improve your life" - 
+
+Yes! Seriously! The practice of doing things in assembly language is 
+absolutely a gym workout for your brain. You can look at yourself in the 
+mirror afterwards and really respect yourself for having been there and 
+done that! 
+
+3) "Altered states of conciousness" - 
+
+Samadhi, bliss, the union with the whole and oneness with the universe - 
+something that practitioners of  meditation and yoga may strive for years 
+to achieve. The simple repetitive nature of assembly language allows you to 
+soon 'lose yourself' and achieve a state whereeverything shuts down and the 
+only thing that exists in this world is nothing.  
 
 I've provided some examples which you can copy / paste or (perhaps) scribe it 
 out for yourself.. But why the extra effort of that?? Very simple - The monks 
